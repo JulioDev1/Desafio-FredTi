@@ -16,7 +16,7 @@ const EcommerceDashboard = () => {
     return (
         <>
             <Row>
-                <Col xs={12}>
+                    <Col xs={12}>
                     <div className="page-title-box">
                         <div className="page-title-right">
                             <form className="d-flex">

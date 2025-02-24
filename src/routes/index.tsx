@@ -28,6 +28,7 @@ const AnalyticsDashboard = React.lazy(() => import('pages/dashboard/Analytics'))
 const EcommerceDashboard = React.lazy(() => import('pages/dashboard/Ecommerce'));
 const ProjectDashboard = React.lazy(() => import('pages/dashboard/Project'));
 const EWalletDashboard = React.lazy(() => import('pages/dashboard/E-Wallet'));
+const HomeDashboard = React.lazy(() => import('pages/dashboard/Home'))
 
 // apps
 const CalendarApp = React.lazy(() => import('pages/apps/Calendar'));
@@ -250,6 +251,10 @@ const AllRoutes = () => {
                         {
                             path: 'e-wallet',
                             element: <LoadComponent component={EWalletDashboard} />,
+                        },
+                        {
+                            path: 'home',
+                            element: <LoadComponent component={HomeDashboard} />,
                         },
                     ],
                 },

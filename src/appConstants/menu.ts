@@ -29,6 +29,12 @@ const MENU_ITEMS: MenuItemType[] = [
                 parentKey: 'dashboards',
             },
             {
+                key: 'ds-home',
+                label: 'Home',
+                url: '/dashboard/home',
+                parentKey: 'dashboards',
+            },
+            {
                 key: 'ds-ecommerce',
                 label: 'Ecommerce',
                 url: '/dashboard/ecommerce',
