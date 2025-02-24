@@ -4,12 +4,9 @@ import SimpleBar from 'simplebar-react';
 import classNames from 'classnames';
 import { getMenuItems } from 'helpers';
 import AppMenu from './Menu/';
-import logoSm from 'assets/images/logo_sm.png';
-import logoDark from 'assets/images/logo-dark.png';
-import logoDarkSm from 'assets/images/logo_sm_dark.png';
-import logo from 'assets/images/logo.png';
 import helpBoxImage from 'assets/images/help-icon.svg';
 import profileImg from 'assets/images/users/avatar-1.jpg';
+import LogoLink from 'components/LogoLink';
 
 type SideBarContentProps = {
     hideUserProfile: boolean;
@@ -89,20 +86,15 @@ const LeftSidebar = ({ isCondensed, isLight, hideLogo, hideUserProfile }: LeftSi
             {!hideLogo && (
                 <>
                     <Link to="/" className="logo text-center logo-light">
-                        <span className="logo-lg">
-                            <img src={isLight ? logoDark : logo} alt="logo" height="16" />
-                        </span>
-                        <span className="logo-sm">
-                            <img src={isLight ? logoSm : logoDarkSm} alt="logo" height="16" />
-                        </span>
+                        <LogoLink theme='text-white'/>
                     </Link>
 
                     <Link to="/" className="logo text-center logo-dark">
                         <span className="logo-lg">
-                            <img src={isLight ? logoDark : logo} alt="logo" height="16" />
+                            {isLight ? <LogoLink theme='text-dark'/> :<LogoLink theme='text-white'/>} 
                         </span>
                         <span className="logo-sm">
-                            <img src={isLight ? logoSm : logoDarkSm} alt="logo" height="16" />
+                            {isLight ? <LogoLink theme='text-dark'/> :<LogoLink theme='text-white'/>}
                         </span>
                     </Link>
                 </>

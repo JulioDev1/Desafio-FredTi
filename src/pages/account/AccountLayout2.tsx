@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import LogoLight from 'assets/images/logo.png';
 import LogoDark from 'assets/images/logo-dark.png';
 import { useAccountLayout } from './hooks';
+import LogoLink from 'components/LogoLink';
 
 type AccountLayoutProps = {
     bottomLinks?: React.ReactNode;
@@ -24,14 +25,10 @@ const AccountLayout2 = ({ bottomLinks, children }: AccountLayoutProps) => {
                         {/* logo */}
                         <div className="auth-brand text-center text-lg-start">
                             <Link to="/" className="logo-dark">
-                                <span>
-                                    <img src={LogoDark} alt="" height="18" />
-                                </span>
+                                <LogoLink theme="text-dark" />
                             </Link>
                             <Link to="/" className="logo-light">
-                                <span>
-                                    <img src={LogoLight} alt="" height="18" />
-                                </span>
+                                <LogoLink theme="text-white" />
                             </Link>
                         </div>
 

@@ -1,3 +1,4 @@
+import { StatisticsWidget } from "components"
 import { Col, Row } from "react-bootstrap"
 
 const Statistics = () => {
@@ -5,22 +6,63 @@ const Statistics = () => {
         <>
             <Row>
                 <Col sm={6}>
-                    <h1>charts</h1>
+                <StatisticsWidget
+                        icon="mdi mdi-account-multiple"
+                        description="Aderencia ao App"
+                        title="Usuários"
+                        stats="40,400"
+                        trend={{
+                            textClass: 'text-success',
+                            icon: 'mdi mdi-arrow-up-bold',
+                            value: '5.27%',
+                            time: 'Since last month',
+                        }}
+                    ></StatisticsWidget>
                 </Col>
-            </Row>
-            <Row>
+
                 <Col sm={6}>
-                    <h1>charts</h1>
+
+                <StatisticsWidget
+                        icon="mdi mdi-account-multiple"
+                        description="Aderencia ao App"
+                        title="Usuários"
+                        stats="40,400"
+                        trend={{
+                            textClass: 'text-success',
+                            icon: 'mdi mdi-arrow-up-bold',
+                            value: '5.27%',
+                            time: 'Since last month',
+                        }}
+                    ></StatisticsWidget>
                 </Col>
-            </Row>
-            <Row>
                 <Col sm={6}>
-                    <h1>charts</h1>
+                    <StatisticsWidget
+                        icon="mdi mdi-account-multiple"
+                        description="Aderencia ao App"
+                        title="Usuários"
+                        stats="40,400"
+                        trend={{
+                            textClass: 'text-success',
+                            icon: 'mdi mdi-arrow-up-bold',
+                            value: '5.27%',
+                            time: 'Since last month',
+                        }}
+                    ></StatisticsWidget>
                 </Col>
-            </Row>
-            <Row>
+
                 <Col sm={6}>
-                    <h1>charts</h1>
+                <StatisticsWidget
+                        icon="mdi mdi-account-multiple"
+                        description="Aderencia ao App"
+                        title="Usuários"
+                        stats="40,400"
+                        trend={{
+                            textClass: 'text-success',
+                            icon: 'mdi mdi-arrow-up-bold',
+                            value: '5.27%',
+                            time: 'Since last month',
+                        }}
+                    ></StatisticsWidget>
                 </Col>
             </Row>
         </>
