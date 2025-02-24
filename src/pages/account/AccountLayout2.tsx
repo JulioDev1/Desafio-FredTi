@@ -25,7 +25,7 @@ const AccountLayout2 = ({ bottomLinks, children }: AccountLayoutProps) => {
                         {/* logo */}
                         <div className="auth-brand text-center text-lg-start">
                             <Link to="/" className="logo-dark">
-                                <LogoLink theme="text-dark" />
+                                <LogoLink theme="text-black" />
                             </Link>
                             <Link to="/" className="logo-light">
                                 <LogoLink theme="text-white" />

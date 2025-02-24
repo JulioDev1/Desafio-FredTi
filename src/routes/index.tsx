@@ -6,7 +6,6 @@ import Root from './Root';
 import { LayoutTypes } from 'appConstants';
 import { useRedux } from 'hooks';
 
-// lazy load all the views
 
 // auth
 const Login = React.lazy(() => import('pages/account/Login'));
@@ -24,28 +23,7 @@ const ForgetPassword2 = React.lazy(() => import('pages/account/ForgetPassword2')
 const LockScreen2 = React.lazy(() => import('pages/account/LockScreen2'));
 
 // dashboard
-const AnalyticsDashboard = React.lazy(() => import('pages/dashboard/Analytics'));
-const EcommerceDashboard = React.lazy(() => import('pages/dashboard/Ecommerce'));
-const ProjectDashboard = React.lazy(() => import('pages/dashboard/Project'));
-const EWalletDashboard = React.lazy(() => import('pages/dashboard/E-Wallet'));
-const HomeDashboard = React.lazy(() => import('pages/dashboard/Home'))
-
-// apps
-const CalendarApp = React.lazy(() => import('pages/apps/Calendar'));
-const ProjectList = React.lazy(() => import('pages/apps/Projects/List'));
-const ProjectDetail = React.lazy(() => import('pages/apps/Projects/Detail/'));
-const ProjectGannt = React.lazy(() => import('pages/apps/Projects/Gantt'));
-const ProjectForm = React.lazy(() => import('pages/apps/Projects/ProjectForm'));
-
-// - chat
-const ChatApp = React.lazy(() => import('pages/apps/Chat/'));
-
-// -crm
-const CRMDashboard = React.lazy(() => import('pages/apps/CRM/Dashboard'));
-const CRMProjects = React.lazy(() => import('pages/apps/CRM/Projects'));
-const CRMManagement = React.lazy(() => import('pages/apps/CRM/Management'));
-const CRMClients = React.lazy(() => import('pages/apps/CRM/Clients'));
-const CRMOrderList = React.lazy(() => import('pages/apps/CRM/OrderList'));
+const HomeDashboard = React.lazy(() => import('pages/Home'))
 
 // - ecommece pages
 const EcommerceProducts = React.lazy(() => import('pages/apps/Ecommerce/Products'));
@@ -234,66 +212,12 @@ const AllRoutes = () => {
             element: <PrivateRoute roles={'Admin'} component={Layout} />,
             children: [
                 {
-                    path: 'dashboard',
-                    children: [
-                        {
-                            path: 'analytics',
-                            element: <LoadComponent component={AnalyticsDashboard} />,
-                        },
-                        {
-                            path: 'ecommerce',
-                            element: <LoadComponent component={EcommerceDashboard} />,
-                        },
-                        {
-                            path: 'project',
-                            element: <LoadComponent component={ProjectDashboard} />,
-                        },
-                        {
-                            path: 'e-wallet',
-                            element: <LoadComponent component={EWalletDashboard} />,
-                        },
-                        {
-                            path: 'home',
-                            element: <LoadComponent component={HomeDashboard} />,
-                        },
-                    ],
+                    path: 'home',
+                    element:<LoadComponent component={HomeDashboard} />
                 },
                 {
                     path: 'apps',
                     children: [
-                        {
-                            path: 'calendar',
-                            element: <LoadComponent component={CalendarApp} />,
-                        },
-                        {
-                            path: 'chat',
-                            element: <LoadComponent component={ChatApp} />,
-                        },
-                        {
-                            path: 'crm',
-                            children: [
-                                {
-                                    path: 'dashboard',
-                                    element: <LoadComponent component={CRMDashboard} />,
-                                },
-                                {
-                                    path: 'projects',
-                                    element: <LoadComponent component={CRMProjects} />,
-                                },
-                                {
-                                    path: 'management',
-                                    element: <LoadComponent component={CRMManagement} />,
-                                },
-                                {
-                                    path: 'clients',
-                                    element: <LoadComponent component={CRMClients} />,
-                                },
-                                {
-                                    path: 'orders',
-                                    element: <LoadComponent component={CRMOrderList} />,
-                                },
-                            ],
-                        },
                         {
                             path: 'ecommerce',
                             children: [
@@ -360,29 +284,7 @@ const AllRoutes = () => {
                                     element: <LoadComponent component={TaskDetails} />,
                                 },
                             ],
-                        },
-
-                        {
-                            path: 'projects',
-                            children: [
-                                {
-                                    path: 'list',
-                                    element: <LoadComponent component={ProjectList} />,
-                                },
-                                {
-                                    path: 'details',
-                                    element: <LoadComponent component={ProjectDetail} />,
-                                },
-                                {
-                                    path: 'gantt',
-                                    element: <LoadComponent component={ProjectGannt} />,
-                                },
-                                {
-                                    path: 'new',
-                                    element: <LoadComponent component={ProjectForm} />,
-                                },
-                            ],
-                        },
+                        }, 
                         {
                             path: 'social',
                             element: <LoadComponent component={SocialFeed} />,

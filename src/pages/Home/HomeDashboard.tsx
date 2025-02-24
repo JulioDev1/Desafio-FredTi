@@ -1,5 +1,6 @@
 import { Col, Row } from "react-bootstrap";
 import { Statistics } from "./Statistics";
+import  Activity  from "./Activity";
 
 const HomeDashboard = ()=>{
     return(
@@ -9,10 +10,14 @@ const HomeDashboard = ()=>{
                     <h1 className="page-title">Home Dashboard</h1>
                 </div>
             </Row>
-            <Row>
-            <Col xl={5} lg={6}>
-                <Statistics/>
-            </Col>
+            <Row className="d-flex align-items-stretch">
+                <Col sm={6} >
+                    <Statistics/>
+                </Col>
+                <Col  sm={6} >
+                    <Activity />
+                </Col>
+
             </Row>
         </>
     )
