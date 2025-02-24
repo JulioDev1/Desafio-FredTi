@@ -40,7 +40,7 @@ const Login = () => {
                 <div className="text-center w-75 m-auto">
                     <h4 className="text-dark-50 text-center mt-0 fw-bold">{t('Sign In')}</h4>
                     <p className="text-muted mb-4">
-                        {t('Entre com seu endereço de email e senha para acessar o painel de administrador')}
+                        {t('Enter your email address and password to access admin panel.')}
                     </p>
                 </div>
 
@@ -59,7 +59,7 @@ const Login = () => {
                         label={t('Username')}
                         type="text"
                         name="username"
-                        placeholder={t('Enter your Username')}
+                        placeholder={t('Enter your email')}
                         containerClass={'mb-3'}
                     />
                     <FormInput

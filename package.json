@@ -104,6 +104,8 @@
   },
   "devDependencies": {
     "@types/react-beautiful-dnd": "^13.1.2",
-    "prettier": "^2.5.1"
+    "eslint": "8.53.0",
+    "eslint-config-react-app": "7.0.1",
+    "prettier": "^3.5.2"
   }
 }
