@@ -2,8 +2,6 @@ import React from 'react';
 import { Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import LogoLight from 'assets/images/logo.png';
-import LogoDark from 'assets/images/logo-dark.png';
 import { useAccountLayout } from './hooks';
 import LogoLink from 'components/LogoLink';
 

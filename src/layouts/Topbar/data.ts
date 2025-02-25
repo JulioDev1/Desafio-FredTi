@@ -88,7 +88,7 @@ const profileMenus: ProfileOption[] = [
     {
         label: 'Logout',
         icon: 'mdi mdi-logout',
-        redirectTo: '/account/logout',
+        redirectTo: '/account/logout2',
     },
 ];
 

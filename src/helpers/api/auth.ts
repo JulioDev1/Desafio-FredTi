@@ -8,7 +8,7 @@ function login(params: { username: string; password: string }) {
 }
 
 function logout() {
-    const baseUrl = '/logout/';
+    const baseUrl = '/logout2/';
     return api.create(`${baseUrl}`, {});
 }
 
