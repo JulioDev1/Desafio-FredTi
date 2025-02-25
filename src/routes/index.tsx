@@ -5,6 +5,7 @@ import PrivateRoute from './PrivateRoute';
 import Root from './Root';
 import { LayoutTypes } from 'appConstants';
 import { useRedux } from 'hooks';
+import RegisterWorker from 'pages/Register/RegisterWorkers';
 
 
 // auth
@@ -108,6 +109,7 @@ const FormValidation = React.lazy(() => import('pages/forms/Validation'));
 const FormWizard = React.lazy(() => import('pages/forms/Wizard'));
 const FileUpload = React.lazy(() => import('pages/forms/FileUpload'));
 const Editors = React.lazy(() => import('pages/forms/Editors'));
+
 
 // charts
 const ApexChart = React.lazy(() => import('pages/charts/Apex'));
@@ -223,11 +225,11 @@ const AllRoutes = () => {
                             children: [
                                 {
                                     path: 'mural',
-                                    element: <LoadComponent component={HomeDashboard} />,
+                                    element: <RegisterWorker />,
                                 },
                                 {
                                     path: 'contatos',
-                                    element: <LoadComponent component={HomeDashboard} />,
+                                    element: <RegisterWorker />,
                                 }
                             ]
                         },
@@ -236,11 +238,11 @@ const AllRoutes = () => {
                             children: [
                                 {
                                     path: 'cftv',
-                                    element: <LoadComponent component={HomeDashboard} />,
+                                    element: <RegisterWorker />,
                                 },
                                 {
                                     path: 'portaria',
-                                    element: <LoadComponent component={HomeDashboard} />,
+                                    element: <RegisterWorker />,
                                 }
                             ]
                         },
@@ -249,11 +251,11 @@ const AllRoutes = () => {
                             children: [
                                 {
                                     path: 'salas',
-                                    element: <LoadComponent component={HomeDashboard} />,
+                                    element: <RegisterWorker />,
                                 },
                                 {
                                     path: 'veiculos',
-                                    element: <LoadComponent component={HomeDashboard} />,
+                                    element: <RegisterWorker />,
                                 }
                             ]
                         },
@@ -262,7 +264,7 @@ const AllRoutes = () => {
                             children: [
                                 {
                                     path: 'politicas-rh',
-                                    element: <LoadComponent component={HomeDashboard} />,
+                                    element: <RegisterWorker />,
                                 }
                             ]
                         },
@@ -271,11 +273,11 @@ const AllRoutes = () => {
                             children: [
                                 {
                                     path: 'its',
-                                    element: <LoadComponent component={HomeDashboard} />,
+                                    element: <RegisterWorker />,
                                 },
                                 {
                                     path: 'workflow',
-                                    element: <LoadComponent component={HomeDashboard} />,
+                                    element: <RegisterWorker />,
                                 }
                             ]
                         },
@@ -284,11 +286,11 @@ const AllRoutes = () => {
                             children: [
                                 {
                                     path: 'kpis-vendas',
-                                    element: <LoadComponent component={HomeDashboard} />,
+                                    element: <RegisterWorker />,
                                 },
                                 {
                                     path: 'produtividade',
-                                    element: <LoadComponent component={HomeDashboard} />,
+                                    element: <RegisterWorker />,
                                 }
                             ]
                         },
@@ -297,11 +299,11 @@ const AllRoutes = () => {
                             children: [
                                 {
                                     path: 'erp',
-                                    element: <LoadComponent component={HomeDashboard} />,
+                                    element: <RegisterWorker />,
                                 },
                                 {
                                     path: 'crm',
-                                    element: <LoadComponent component={HomeDashboard} />,
+                                    element: <RegisterWorker />,
                                 }
                             ]
                         },
