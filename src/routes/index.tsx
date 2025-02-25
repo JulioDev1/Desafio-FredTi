@@ -27,28 +27,7 @@ const LockScreen2 = React.lazy(() => import('pages/account/LockScreen2'));
 const HomeDashboard = React.lazy(() => import('pages/Home'))
 
 // - ecommece pages
-const EcommerceProducts = React.lazy(() => import('pages/apps/Ecommerce/Products'));
-const ProductDetails = React.lazy(() => import('pages/apps/Ecommerce/ProductDetails'));
-const Orders = React.lazy(() => import('pages/apps/Ecommerce/Orders'));
-const OrderDetails = React.lazy(() => import('pages/apps/Ecommerce/OrderDetails'));
-const Customers = React.lazy(() => import('pages/apps/Ecommerce/Customers'));
-const Cart = React.lazy(() => import('pages/apps/Ecommerce/Cart'));
-const Checkout = React.lazy(() => import('pages/apps/Ecommerce/Checkout/'));
-const Sellers = React.lazy(() => import('pages/apps/Ecommerce/Sellers'));
 
-// - email
-const Inbox = React.lazy(() => import('pages/apps/Email/Inbox'));
-const EmailDetail = React.lazy(() => import('pages/apps/Email/Detail'));
-
-// - social
-const SocialFeed = React.lazy(() => import('pages/apps/SocialFeed/'));
-
-// - tasks
-const TaskList = React.lazy(() => import('pages/apps/Tasks/List/'));
-const TaskDetails = React.lazy(() => import('pages/apps/Tasks/Details'));
-const Kanban = React.lazy(() => import('pages/apps/Tasks/Board/'));
-// - file
-const FileManager = React.lazy(() => import('pages/apps/FileManager'));
 
 // pages
 const Profile = React.lazy(() => import('pages/profile'));
@@ -307,82 +286,7 @@ const AllRoutes = () => {
                                 }
                             ]
                         },
-                        {
-                            path: 'ecommerce',
-                            children: [
-                                {
-                                    path: 'products',
-                                    element: <LoadComponent component={EcommerceProducts} />,
-                                },
-                                {
-                                    path: 'details',
-                                    element: <LoadComponent component={ProductDetails} />,
-                                },
-                                {
-                                    path: 'orders',
-                                    element: <LoadComponent component={Orders} />,
-                                },
-                                {
-                                    path: 'order/details',
-                                    element: <LoadComponent component={OrderDetails} />,
-                                },
-                                {
-                                    path: 'customers',
-                                    element: <LoadComponent component={Customers} />,
-                                },
-                                {
-                                    path: 'shopping-cart',
-                                    element: <LoadComponent component={Cart} />,
-                                },
-                                {
-                                    path: 'checkout',
-                                    element: <LoadComponent component={Checkout} />,
-                                },
-                                {
-                                    path: 'sellers',
-                                    element: <LoadComponent component={Sellers} />,
-                                },
-                            ],
-                        },
                         
-                        {
-                            path: 'email',
-                            children: [
-                                {
-                                    path: 'inbox',
-                                    element: <LoadComponent component={Inbox} />,
-                                },
-                                {
-                                    path: 'details',
-                                    element: <LoadComponent component={EmailDetail} />,
-                                },
-                            ],
-                        },
-                        {
-                            path: 'tasks',
-                            children: [
-                                {
-                                    path: 'list',
-                                    element: <LoadComponent component={TaskList} />,
-                                },
-                                {
-                                    path: 'kanban',
-                                    element: <LoadComponent component={Kanban} />,
-                                },
-                                {
-                                    path: 'details',
-                                    element: <LoadComponent component={TaskDetails} />,
-                                },
-                            ],
-                        },
-                        {
-                            path: 'social',
-                            element: <LoadComponent component={SocialFeed} />,
-                        },
-                        {
-                            path: 'file',
-                            element: <LoadComponent component={FileManager} />,
-                        },
                     ],
                 },
                 {
