@@ -213,11 +213,98 @@ const AllRoutes = () => {
             children: [
                 {
                     path: 'home',
-                    element:<LoadComponent component={HomeDashboard} />
+                    element: <LoadComponent component={HomeDashboard} />
                 },
                 {
                     path: 'apps',
                     children: [
+                        {
+                            path: 'comunicacao',
+                            children: [
+                                {
+                                    path: 'mural',
+                                    element: <LoadComponent component={HomeDashboard} />,
+                                },
+                                {
+                                    path: 'contatos',
+                                    element: <LoadComponent component={HomeDashboard} />,
+                                }
+                            ]
+                        },
+                        {
+                            path: 'seguranca',
+                            children: [
+                                {
+                                    path: 'cftv',
+                                    element: <LoadComponent component={HomeDashboard} />,
+                                },
+                                {
+                                    path: 'portaria',
+                                    element: <LoadComponent component={HomeDashboard} />,
+                                }
+                            ]
+                        },
+                        {
+                            path: 'agendamentos',
+                            children: [
+                                {
+                                    path: 'salas',
+                                    element: <LoadComponent component={HomeDashboard} />,
+                                },
+                                {
+                                    path: 'veiculos',
+                                    element: <LoadComponent component={HomeDashboard} />,
+                                }
+                            ]
+                        },
+                        {
+                            path: 'documentos',
+                            children: [
+                                {
+                                    path: 'politicas-rh',
+                                    element: <LoadComponent component={HomeDashboard} />,
+                                }
+                            ]
+                        },
+                        {
+                            path: 'processos',
+                            children: [
+                                {
+                                    path: 'its',
+                                    element: <LoadComponent component={HomeDashboard} />,
+                                },
+                                {
+                                    path: 'workflow',
+                                    element: <LoadComponent component={HomeDashboard} />,
+                                }
+                            ]
+                        },
+                        {
+                            path: 'dashboards',
+                            children: [
+                                {
+                                    path: 'kpis-vendas',
+                                    element: <LoadComponent component={HomeDashboard} />,
+                                },
+                                {
+                                    path: 'produtividade',
+                                    element: <LoadComponent component={HomeDashboard} />,
+                                }
+                            ]
+                        },
+                        {
+                            path: 'acessos',
+                            children: [
+                                {
+                                    path: 'erp',
+                                    element: <LoadComponent component={HomeDashboard} />,
+                                },
+                                {
+                                    path: 'crm',
+                                    element: <LoadComponent component={HomeDashboard} />,
+                                }
+                            ]
+                        },
                         {
                             path: 'ecommerce',
                             children: [
@@ -255,6 +342,7 @@ const AllRoutes = () => {
                                 },
                             ],
                         },
+                        
                         {
                             path: 'email',
                             children: [
@@ -284,7 +372,7 @@ const AllRoutes = () => {
                                     element: <LoadComponent component={TaskDetails} />,
                                 },
                             ],
-                        }, 
+                        },
                         {
                             path: 'social',
                             element: <LoadComponent component={SocialFeed} />,
