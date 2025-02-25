@@ -1,193 +1,75 @@
-import { Link } from 'react-router-dom';
-import { Row, Col, Card, Button } from 'react-bootstrap';
-import classNames from 'classnames';
-import { Column } from 'react-table';
-import { PageTitle, Table, CellFormatter, PageSize } from 'components';
-import { Product } from './types';
-import { products } from './data';
+import { Table, Card, Button, Form, InputGroup, Badge } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
-/* product column render */
-const ProductColumn = ({ row }: CellFormatter<Product>) => {
-    const rating = row.original.rating;
-    const emptyStars = rating < 5 ? 5 - rating : 0;
-    return (
-        <>
-            <img
-                src={row.original.image}
-                alt={row.original.name}
-                title={row.original.name}
-                className="rounded me-3"
-                height="48"
-            />
-            <p className="m-0 d-inline-block align-middle font-16">
-                <Link to="/apps/ecommerce/details" className="text-body">
-                    {row.original.name}
-                </Link>
-                <br />
-                {[...Array(rating)].map((x, index) => (
-                    <span key={index.toString()} className="text-warning mdi mdi-star"></span>
-                ))}
-                {[...Array(emptyStars)].map((x, index) => (
-                    <span key={index.toString()} className="text-warning mdi mdi-star-outline"></span>
-                ))}
-            </p>
-        </>
-    );
-};
-
-/* status column render */
-const StatusColumn = ({ row }: CellFormatter<Product>) => {
-    return (
-        <span
-            className={classNames('badge', {
-                'bg-success': row.original.status,
-                'bg-danger': !row.original.status,
-            })}
-        >
-            {row.original.status ? 'Active' : 'Deactivated'}
-        </span>
-    );
-};
-
-/* action column render */
-const ActionColumn = ({ row }: CellFormatter<Product>) => {
-    return (
-        <>
-            <Link to="#" className="action-icon">
-                {' '}
-                <i className="mdi mdi-eye"></i>
-            </Link>
-            <Link to="#" className="action-icon">
-                {' '}
-                <i className="mdi mdi-square-edit-outline"></i>
-            </Link>
-            <Link to="#" className="action-icon">
-                {' '}
-                <i className="mdi mdi-delete"></i>
-            </Link>
-        </>
-    );
-};
-
-// get all columns
-const columns: ReadonlyArray<Column> = [
-    {
-        Header: 'Product',
-        accessor: 'name',
-        defaultCanSort: true,
-        Cell: ProductColumn,
-    },
-    {
-        Header: 'Category',
-        accessor: 'category',
-        defaultCanSort: true,
-    },
-    {
-        Header: 'Added Date',
-        accessor: 'added_date',
-        defaultCanSort: true,
-    },
-    {
-        Header: 'Price',
-        accessor: 'price',
-        defaultCanSort: true,
-    },
-    {
-        Header: 'Quantity',
-        accessor: 'quantity',
-        defaultCanSort: true,
-    },
-    {
-        Header: 'Status',
-        accessor: 'status',
-        defaultCanSort: true,
-        Cell: StatusColumn,
-    },
-    {
-        Header: 'Action',
-        accessor: 'action',
-        defaultCanSort: false,
-        Cell: ActionColumn,
-    },
+const employees = [
+    { id: 1, name: "Carlos Almeida", role: "Desenvolvedor Full Stack", department: "TI", hireDate: "2023-08-15", salary: "R$8.500", status: "Ativo", avatar: "https://i.pravatar.cc/150?img=1" },
+    { id: 2, name: "Amanda Costa", role: "UX Designer", department: "Design", hireDate: "2022-05-30", salary: "R$7.200", status: "Ativo", avatar: "https://i.pravatar.cc/150?img=2" },
+    { id: 3, name: "Rafael Lima", role: "Gerente de Projetos", department: "PMO", hireDate: "2021-11-10", salary: "R$12.000", status: "Inativo", avatar: "https://i.pravatar.cc/150?img=3" },
 ];
 
-// get pagelist to display
-const sizePerPageList: PageSize[] = [
-    {
-        text: '5',
-        value: 5,
-    },
-    {
-        text: '10',
-        value: 10,
-    },
-    {
-        text: '20',
-        value: 20,
-    },
-    {
-        text: 'All',
-        value: products.length,
-    },
-];
-
-const RegisterWorker = () => {
+const RegisterWorkers = () => {
     return (
-        <>
-            <PageTitle
-                breadCrumbItems={[
-                    { label: 'eCommerce', path: '/apps/ecoRegisterWorker' },
-                    { label: 'Products', path: '/apps/ecommerce/products', active: true },
-                ]}
-                title={'Products'}
-            />
+        <Card className="shadow-sm rounded">
+            <Card.Body>
+                {/* Cabeçalho */}
+                <div className="d-flex justify-content-between align-items-center mb-3">
+                    <h4 className="mb-0">Cadastrar Funcionário</h4>
+                    <div className="d-flex gap-2">
+                        {/* Campo de Pesquisa */}
+                        <InputGroup className="w-auto">
+                            <InputGroup.Text><i className="mdi mdi-magnify"></i></InputGroup.Text>
+                            <Form.Control placeholder="Pesquisar..." />
+                        </InputGroup>
+                        {/* Botão de Adicionar */}
+                        <Button variant="success">
+                            <i className="mdi mdi-account-plus me-1"></i> Adicionar Funcionário
+                        </Button>
+                    </div>
+                </div>
 
-            <Row>
-                <Col xs={12}>
-                    <Card>
-                        <Card.Body>
-                            <Row className="mb-2">
-                                <Col sm={5}>
-                                    <Link to="#" className="btn btn-danger mb-2">
-                                        <i className="mdi mdi-plus-circle me-2"></i> Add Products
-                                    </Link>
-                                </Col>
-
-                                <Col sm={7}>
-                                    <div className="text-sm-end">
-                                        <Button variant="success" className="mb-2 me-1">
-                                            <i className="mdi mdi-cog-outline"></i>
-                                        </Button>
-
-                                        <Button variant="light" className="mb-2 me-1">
-                                            Import
-                                        </Button>
-
-                                        <Button variant="light" className="mb-2">
-                                            Export
-                                        </Button>
-                                    </div>
-                                </Col>
-                            </Row>
-
-                            <Table<Product>
-                                columns={columns}
-                                data={products}
-                                pageSize={5}
-                                sizePerPageList={sizePerPageList}
-                                isSortable={true}
-                                pagination={true}
-                                isSelectable={true}
-                                isSearchable={true}
-                                theadClass="table-light"
-                                searchBoxClass="mb-2"
-                            />
-                        </Card.Body>
-                    </Card>
-                </Col>
-            </Row>
-        </>
+                {/* Tabela */}
+                <Table responsive bordered hover>
+                    <thead className="table-light">
+                        <tr>
+                            <th>Funcionário</th>
+                            <th>Cargo</th>
+                            <th>Departamento</th>
+                            <th>Data de Contratação</th>
+                            <th>Salário</th>
+                            <th>Status</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {employees.map((emp) => (
+                            <tr key={emp.id}>
+                                <td className="d-flex align-items-center gap-2">
+                                    <img src={emp.avatar} alt={emp.name} className="rounded-circle" width="40" height="40" />
+                                    {emp.name}
+                                </td>
+                                <td>{emp.role}</td>
+                                <td>{emp.department}</td>
+                                <td>{emp.hireDate}</td>
+                                <td>{emp.salary}</td>
+                                <td>
+                                    <Badge bg={emp.status === "Ativo" ? "success" : "danger"}>
+                                        {emp.status}
+                                    </Badge>
+                                </td>
+                                {/* Ícones de ação */}
+                                <td className="text-center">
+                                    <Link to="#" className="text-primary me-2"><i className="mdi mdi-eye"></i></Link>
+                                    <Link to="#" className="text-warning me-2"><i className="mdi mdi-pencil"></i></Link>
+                                    <Link to="#" className="text-danger"><i className="mdi mdi-delete"></i></Link>
+                                </td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </Table>
+            </Card.Body>
+        </Card>
     );
 };
 
-export default RegisterWorker;
+export default RegisterWorkers;
+
